@@ -1,0 +1,72 @@
+#infinity
+R> baz <- 90000^100
+R> baz
+[1] Inf
+R> foo <- Inf
+R> foo
+[1] Inf
+R> Inf*-9
+[1] -Inf
+R> -59/Inf
+[1] 0
+R> 59/0
+[1] Inf
+R> is.infinite(x=qux)
+[1] FALSE FALSE  TRUE  TRUE  TRUE FALSE
+R> is.finite(x=qux)
+[1]  TRUE  TRUE FALSE FALSE FALSE  TRUE
+
+#NaN
+R> foo <- NaN
+R> foo
+[1] NaN
+R> -Inf+Inf
+[1] NaN
+R> Inf/Inf
+[1] NaN
+R> 0/0 
+[1] NaN
+#any mathematical operation involving NaN will simply result in NaN
+R> bar
+[1]      NaN    54.30    -2.00      NaN 90094.12     -Inf    55.00
+R> is.nan(x=bar)
+[1]  TRUE FALSE FALSE  TRUE FALSE FALSE FALSE
+R> !is.nan(x=bar)
+[1] FALSE  TRUE  TRUE FALSE  TRUE  TRUE  TRUE
+
+#NA
+#is.na() flags the corresponding NA entries
+R> qux
+ [1]    NA  5.89   Inf    NA  9.43 -2.35   NaN  2.10 -8.53 -7.58    NA -4.58
+[13]  2.01   NaN
+R> is.na(x=qux)
+ [1]  TRUE FALSE FALSE  TRUE FALSE FALSE  TRUE FALSE FALSE FALSE  TRUE FALSE
+[13] FALSE  TRUE
+R> which(x=is.nan(x=qux))
+[1]  7 14
+#which() identifies the index positions
+R> which(x=(is.na(x=qux)&!is.nan(x=qux))) 
+[1] 1 4 11
+#na.omit will take a structure and delete all NAs from it
+#na.omit will also apply to NaNs if the elements are numeric
+R> quux <- na.omit(object=qux)
+R> quux
+[1] 5.89 Inf 9.43 -2.35 2.10 -8.53 -7.58 -4.58 2.01
+#Similar to NaN, arithmetic calculations with NA result in NA
+
+#NULL
+#NULL is empty value and NA is missing value
+R> c(2,4,NA,8)
+[1]  2  4 NA  8
+R> c(2,4,NULL,8)
+[1] 2 4 8
+#NULL cannot take up a position in the vector
+R> c(NA,NA,NA)
+[1] NA NA NA
+R> c(NULL,NULL,NULL)
+NULL
+#NULL has an interesting effect if it’s included in arithmetic or relational comparisons
+R> NULL+53
+numeric(0)
+R> 53<=NULL
+logical(0)
