@@ -1,0 +1,40 @@
+## dplyr functionality
+
+* Five basic verbs: `filter`, `select`, `arrange`, `mutate`, `summarise` (plus `group_by`)
+* Can work with data stored in databases and [data tables](http://datatable.r-forge.r-project.org/)
+* Joins: inner join, left join, semi-join, anti-join (not covered below)
+* Window functions for calculating ranking, offsets, and more
+* [Better than plyr](http://blog.rstudio.org/2014/01/17/introducing-dplyr/) if you're only working with data frames (though it doesn't yet duplicate all of the plyr functionality)
+* Examples below are based upon the [latest release](https://github.com/hadley/dplyr/releases), version 0.2 (released May 2014)
+
+
+## Loading dplyr and an example dataset
+
+* dplyr will mask a few base functions
+* If you also use plyr, load plyr first
+* hflights is flights departing from two Houston airports in 2011
+
+```{r}
+# load packages
+suppressMessages(library(dplyr))
+library(hflights)
+
+# explore data
+data(hflights)
+head(hflights)
+```
+
+* `tbl_df` creates a "local data frame"
+* Local data frame is simply a wrapper for a data frame that prints nicely
+
+```{r}
+# convert to local data frame
+flights <- tbl_df(hflights)
+
+# printing only shows 10 rows and as many columns as can fit on your screen
+flights
+```
+
+```{r results='hide'}
+# you can specify that you want to see more rows
+print(flights, n=20)
