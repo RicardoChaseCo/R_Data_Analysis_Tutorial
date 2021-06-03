@@ -26,4 +26,28 @@ This part is about some special functions used in R
 - levels related: create, check, relabel, cut
 - list related: create, rename, extract, check size, add data
 
-## Part 3 
+## Part 3 Some_Special_Values_in_R
+
+- infinity(inf)
+- NaN(not a number)
+- NA(not existing)
+- NULL(empty)
+
+## Part 4 Types_and_Classes
+
+- attributes
+- object class
+- as-dot coercion
+
+## Part 5 Tidyverse_dplyr_markdown
+
+- filter
+- select
+- arrange
+- mutate
+- summarise
+- group_by
+- joins: inner, outer, left, right, semi, anti
+- rank with window functions
+
+## Part 6 Tidyverse_
