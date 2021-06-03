@@ -50,4 +50,17 @@ This part is about some special functions used in R
 - joins: inner, outer, left, right, semi, anti
 - rank with window functions
 
-## Part 6 Tidyverse_
+## Part 6 Tidyverse_tidyr
+
+## Part 7 Tidyverse_readr
+
+## Part 8 Tidyverse_tibble
+
+## Part 9 Tidyverse_ggplot2
+
+## Part 10 Tidyverse_stringr
+
+## Part 11 Tidyverse_forcats
+
+## Part 12 Tidyverse_purrr
+
