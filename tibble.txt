@@ -1,0 +1,11 @@
+#The tbl, pronounced tibble, is a special kind of data frame
+
+#If using RStudio, output for a tibble adjusts to your window size, tibble display better
+
+#subset
+class(data[,2])
+#> [1] "numeric"
+
+#tibbles will give you a warning if you try to access a column that does not exist.
+murders$Population 
+#> NULL
