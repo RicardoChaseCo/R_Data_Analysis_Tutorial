@@ -1,0 +1,20 @@
+#The tbl, pronounced tibble, is a special kind of data frame
+
+#If using RStudio, output for a tibble adjusts to your window size, tibble display better
+
+#subset
+class(data[,2])
+#> [1] "numeric"
+
+#tibbles will give you a warning if you try to access a column that does not exist.
+murders$Population 
+#> NULL
+
+#tibbles can have complex entries, such as list and function
+tibble(id = c(1, 2, 3), func = c(mean, median, sd))
+
+#create a tibble
+ grades <- tibble(names = c("John", "Juan", "Jean", "Yao"), 
+                  exam_1 = c(95, 80, 90, 85),
+                  exam_2 = c(90, 85, 85, 90))
+#To convert a regular data frame to a tibble, you can use the as_tibble function
